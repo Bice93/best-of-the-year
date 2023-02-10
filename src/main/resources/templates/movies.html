@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Movies</title>
+</head>
+<body>
+	<h1>Movie list</h1>
+	
+	<!-- 	<p th:text="${films}"></p> -->
+	<ul th:each="film : ${films}">
+		<li th:text="${film.name}"></li>
+	</ul>
+</body>
+</html>

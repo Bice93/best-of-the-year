@@ -23,9 +23,9 @@ public class MainController {
 		return "index";
 	}
 	
-	List<Movie> movies = getBestMovies();
 	@GetMapping("/movies") 
 	public String viewMovies(Model m) {
+		List<Movie> movies = getBestMovies();
 		m.addAttribute("films", movies);
 		return "movies";
 	}
@@ -38,12 +38,16 @@ public class MainController {
 	}
 	
 	@GetMapping("/movies/{id}")
-	public String dettaglioMovie(@PathVariable("id") String id) {
+	public String dettaglioMovie(Model model, @PathVariable("id") String id) {
+		List<Movie> movies = getBestMovies();
+		model.addAttribute("movie", movies.get(Integer.parseInt(id) - 1));
 		return "movie";
 	}
 	
 	@GetMapping("/songs/{id}")
-	public String dettaglioSong(@PathVariable("id") String id) {
+	public String dettaglioSong(Model model, @PathVariable("id") String id) {
+		List<Song> songs = getBestSongs();
+		model.addAttribute("song", songs.get(Integer.parseInt(id) - 1));
 		return "song";
 	}
 	

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Songs</title>
@@ -14,7 +14,7 @@
 	
 	<!-- 	<p th:text="${songs}"></p> -->
 	<ul th:each="song : ${songs}">
-		<li><a th:href="@{/songs/{id}}"> [[${song.name}]] </a></li>
+		<li><a th:href="@{/songs/{id}(id=${song.id})}"> [[${song.name}]] </a></li>
 	</ul>
 </body>
 </html>

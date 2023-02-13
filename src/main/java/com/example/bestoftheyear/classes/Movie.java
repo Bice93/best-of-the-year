@@ -15,4 +15,8 @@ public class Movie {
 		return name;
 	}
 	
+	public int getId() {
+		return id;
+	}
+	
 }

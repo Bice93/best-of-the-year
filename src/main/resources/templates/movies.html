@@ -2,19 +2,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<div th:replace="~{fragments :: head_bootstrap}"></div>
 <title>Movies</title>
 </head>
 <body>
-	<ul>
-		<li><a th:href="@{/}">Home</a></li>
-		<li><a th:href="@{/movies}">Movies</a></li>
-		<li><a th:href="@{/songs}">Songs</a></li>
-	</ul>
+	<!-- 	<ul> -->
+	<!-- 		<li><a th:href="@{/}">Home</a></li> -->
+	<!-- 		<li><a th:href="@{/movies}">Movies</a></li> -->
+	<!-- 		<li><a th:href="@{/songs}">Songs</a></li> -->
+	<!-- 	</ul> -->
+	<div th:replace="~{fragments :: navbar('movies')}"></div>
+
 	<h1>Movie list</h1>
-	
+
 	<!-- 	<p th:text="${films}"></p> -->
 	<ul th:each="film : ${films}">
-		<li><a th:href="@{/movies/{id}(id=${film.id}) }"> [[${film.name}]] </a></li>
+		<li><a th:href="@{/movies/{id}(id=${film.id}) }">
+				[[${film.name}]] </a></li>
 	</ul>
+	<div th:replace="~{fragments :: script}"></div>
 </body>
 </html>

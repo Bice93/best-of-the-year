@@ -5,11 +5,16 @@
 <title>Songs</title>
 </head>
 <body>
+	<ul>
+		<li><a th:href="@{/}">Home</a></li>
+		<li><a th:href="@{/movies}">Movies</a></li>
+		<li><a th:href="@{/songs}">Songs</a></li>
+	</ul>
 	<h1>Song list</h1>
 	
 	<!-- 	<p th:text="${songs}"></p> -->
 	<ul th:each="song : ${songs}">
-		<li th:text="${song.name}"></li>
+		<li><a th:href="@{/songs/{id}}"> [[${song.name}]] </a></li>
 	</ul>
 </body>
 </html>
